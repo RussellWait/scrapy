@@ -75,10 +75,12 @@ description: "逐行分析 Scrapy 源码文件并写入对应 md 文件。必须
 - **调用关系图**：对外接口和被依赖的外部接口
 - 用 Mermaid 图，放在 md 文件最后
 
-### 7. 更新 SRC_MAP.txt（位于 `_mytools/SRC_MAP.txt`）
-- 每次 `Write` 或 `SearchReplace` 修改 md 文件后，**必须同步更新** SRC_MAP.txt 中对应文件的时间戳
-- 将 `文件名.py` 替换为 `文件名.py — YYYY-MM-DD HH:MM`
-- 时间必须用**北京时间**（CST, UTC+8），运行 `TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M'` 获取
+### 7. 更新 CREATE_MD_INFO.txt（位于 `_code_analysis/CREATE_MD_INFO.txt`）
+- 每次新分析或重新分析完成、并且 **实际写入或改写 md 分析内容** 后，**必须同步更新** `CREATE_MD_INFO.txt` 中对应源码条目的时间戳
+- 格式是在对应文件记录末尾追加：`— 【YYYY-MM-DD HH:MM】`
+- 重新分析同一文件时，覆盖旧时间为新时间
+- 时间必须用**北京时间**（CST, UTC+8）
+- `mark-done.command` / `mark-pending.command` 只表示“人已阅读完 / 重置阅读状态”，**不得**用它们来更新 `CREATE_MD_INFO.txt`
 
 ### 8. 批量分析规则
 - 每批 **3 个文件**，自动进入下一批；**超过 500 行的文件**单独处理
@@ -94,6 +96,8 @@ description: "逐行分析 Scrapy 源码文件并写入对应 md 文件。必须
 ✅ **已分析** -- YYYY-MM-DD HH:MM（你运行 mark-done.command 后自动写入）
 ```
 
+> `CREATE_MD_INFO.txt` 中的时间 = md 分析内容生成/修改时间；文件首行 `✅ **已分析** -- YYYY-MM-DD HH:MM` = 人工阅读完成时间；两者独立
+>
 > 切换工具：`_code_analysis/_mytools/mark-done.command`（标记为已分析）`_code_analysis/_mytools/mark-pending.command`（重置为待分析）
 
 ### 分析内容（二选一）

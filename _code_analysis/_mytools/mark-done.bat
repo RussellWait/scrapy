@@ -21,7 +21,7 @@ for %%f in (%input%) do (
     ) else (
         REM 用 PowerShell 替换第一行：⬜ **待分析** → ✅ **已分析** -- 北京时间
         powershell -NoProfile -Command ^
-            "$now = (Get-Date).AddHours(8).ToString('yyyy-MM-dd HH:mm');" ^
+            "$now = [DateTimeOffset]::UtcNow.ToOffset([TimeSpan]::FromHours(8)).ToString('yyyy-MM-dd HH:mm');" ^
             "$lines = Get-Content '%%~f';" ^
             "$lines[0] = $lines[0] -replace '^⬜ \*\*待分析\*\*.*', \"✅ **已分析** -- $now\";" ^
             "$lines | Set-Content '%%~f' -Encoding UTF8;"
