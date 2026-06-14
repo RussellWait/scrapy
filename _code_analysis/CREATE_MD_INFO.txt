@@ -1,0 +1,200 @@
+需要分析的源码文件目录树（以工程根目录为基准）
+
+scrapy/
+├── commands/
+│   ├── __init__.py — 【2026-06-13 03:21】
+│   ├── bench.py — 【2026-06-13 03:21】
+│   ├── check.py — 【2026-06-13 03:26】
+│   ├── crawl.py
+│   ├── edit.py
+│   ├── fetch.py — 【2026-06-13 03:45】
+│   ├── genspider.py
+│   ├── list.py
+│   ├── parse.py
+│   ├── runspider.py
+│   ├── settings.py
+│   ├── shell.py
+│   ├── startproject.py
+│   ├── version.py
+│   └── view.py
+├── contracts/
+│   ├── __init__.py
+│   └── default.py
+├── core/
+│   ├── downloader/
+│   │   ├── handlers/
+│   │   │   ├── __init__.py
+│   │   │   ├── _base_http.py
+│   │   │   ├── _base_streaming.py
+│   │   │   ├── _httpx.py
+│   │   │   ├── base.py
+│   │   │   ├── datauri.py
+│   │   │   ├── file.py
+│   │   │   ├── ftp.py
+│   │   │   ├── http.py
+│   │   │   ├── http11.py
+│   │   │   ├── http2.py
+│   │   │   └── s3.py
+│   │   ├── __init__.py
+│   │   ├── contextfactory.py
+│   │   ├── middleware.py
+│   │   └── tls.py
+│   ├── http2/
+│   │   ├── __init__.py
+│   │   ├── agent.py
+│   │   ├── protocol.py
+│   │   └── stream.py
+│   ├── __init__.py
+│   ├── engine.py
+│   ├── scheduler.py
+│   ├── scraper.py
+│   └── spidermw.py
+├── downloadermiddlewares/
+│   ├── __init__.py
+│   ├── cookies.py
+│   ├── defaultheaders.py
+│   ├── downloadtimeout.py
+│   ├── httpauth.py
+│   ├── httpcache.py
+│   ├── httpcompression.py
+│   ├── httpproxy.py
+│   ├── offsite.py
+│   ├── redirect.py
+│   ├── retry.py
+│   ├── robotstxt.py
+│   ├── stats.py
+│   └── useragent.py
+├── spidermiddlewares/
+│   ├── __init__.py
+│   ├── base.py
+│   ├── depth.py
+│   ├── httperror.py
+│   ├── referer.py
+│   ├── start.py
+│   └── urllength.py
+├── extensions/
+│   ├── __init__.py
+│   ├── closespider.py
+│   ├── corestats.py
+│   ├── debug.py
+│   ├── feedexport.py
+│   ├── httpcache.py
+│   ├── logcount.py
+│   ├── logstats.py
+│   ├── memdebug.py
+│   ├── memusage.py
+│   ├── periodic_log.py
+│   ├── postprocessing.py
+│   ├── spiderstate.py
+│   ├── statsmailer.py
+│   ├── telnet.py
+│   └── throttle.py
+├── http/
+│   ├── request/
+│   │   ├── __init__.py
+│   │   ├── form.py
+│   │   ├── json_request.py
+│   │   └── rpc.py
+│   ├── response/
+│   │   ├── __init__.py
+│   │   ├── html.py
+│   │   ├── json.py
+│   │   ├── text.py
+│   │   └── xml.py
+│   ├── __init__.py
+│   ├── cookies.py
+│   └── headers.py
+├── linkextractors/
+│   ├── __init__.py
+│   └── lxmlhtml.py
+├── loader/
+│   └── __init__.py
+├── pipelines/
+│   ├── __init__.py
+│   ├── files.py
+│   ├── images.py
+│   └── media.py
+├── selector/
+│   ├── __init__.py
+│   └── unified.py
+├── settings/
+│   ├── __init__.py
+│   └── default_settings.py
+├── spiders/
+│   ├── __init__.py
+│   ├── crawl.py
+│   ├── feed.py
+│   └── sitemap.py
+├── templates/
+│   └── project/
+│       └── module/
+│           ├── spiders/
+│           │   └── __init__.py
+│           └── __init__.py
+├── utils/
+│   ├── __init__.py
+│   ├── _compression.py
+│   ├── _deps_compat.py
+│   ├── _download_handlers.py
+│   ├── asyncgen.py
+│   ├── asyncio.py
+│   ├── benchserver.py
+│   ├── boto.py
+│   ├── conf.py
+│   ├── console.py
+│   ├── curl.py
+│   ├── datatypes.py
+│   ├── decorators.py
+│   ├── defer.py
+│   ├── deprecate.py
+│   ├── display.py
+│   ├── engine.py
+│   ├── ftp.py
+│   ├── gz.py
+│   ├── httpobj.py
+│   ├── iterators.py
+│   ├── job.py
+│   ├── log.py
+│   ├── misc.py
+│   ├── ossignal.py
+│   ├── project.py
+│   ├── python.py
+│   ├── reactor.py
+│   ├── reactorless.py
+│   ├── request.py
+│   ├── response.py
+│   ├── serialize.py
+│   ├── signal.py
+│   ├── sitemap.py
+│   ├── spider.py
+│   ├── ssl.py
+│   ├── template.py
+│   ├── test.py
+│   ├── trackref.py
+│   ├── url.py
+│   └── versions.py
+├── __init__.py
+├── __main__.py
+├── addons.py
+├── cmdline.py
+├── crawler.py
+├── dupefilters.py
+├── exceptions.py
+├── exporters.py
+├── extension.py
+├── interfaces.py
+├── item.py
+├── link.py
+├── logformatter.py
+├── mail.py
+├── middleware.py
+├── pqueues.py
+├── resolver.py
+├── responsetypes.py
+├── robotstxt.py
+├── shell.py
+├── signalmanager.py
+├── signals.py
+├── spiderloader.py
+├── squeues.py
+└── statscollectors.py
